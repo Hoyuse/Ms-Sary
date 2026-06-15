@@ -25,12 +25,12 @@ export default function Profile() {
           className="bg-white rounded-xl border border-[#dde9ff] overflow-hidden shadow-lg grid md:grid-cols-12"
         >
           {/* Typographic Academic Crest / Monogram decoration block replacing the portrait image */}
-          <div className="md:col-span-5 relative h-80 md:h-auto min-h-[360px] bg-[#00236f] text-white flex flex-col justify-between p-0 overflow-hidden select-none">
+          <div className="md:col-span-5 relative h-72 md:h-auto min-h-[300px] bg-[#00236f] text-white flex flex-col justify-between p-0 overflow-hidden select-none">
             {/* Portrait image for Sobre mí */}
             <div className="absolute inset-0 opacity-10 bg-grid-lines pointer-events-none grid-notebook" />
             <img src={portrait1} alt="Retrato de Ms. Sary" className="w-full h-full object-cover block" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00174e]/80 pointer-events-none" />
-            <div className="relative z-10 p-6 flex flex-col justify-end h-full">
+            <div className="relative z-10 p-4 md:p-6 flex flex-col justify-end h-full">
               <div className="flex items-center justify-between">
                 <span className="font-sans font-bold text-[9px] tracking-widest uppercase text-[#fed65b] border border-[#fed65b]/30 px-2 py-0.5 rounded">
                   Oficial Seal

@@ -99,7 +99,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         <img
           src={portrait2}
           alt="Retrato decorativo Ms. Sary"
-          className="hidden md:block absolute right-6 top-6 w-36 h-36 rounded-xl shadow-lg object-cover ring-2 ring-white/60"
+          className="absolute right-4 top-4 w-28 h-28 rounded-xl shadow-lg object-cover ring-2 ring-white/60 md:w-36 md:h-36 md:right-6 md:top-6"
         />
       </div>
     </header>
