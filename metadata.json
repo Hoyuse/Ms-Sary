@@ -1,0 +1,8 @@
+{
+  "name": "Ms. Sary - Asesorías Académicas",
+  "description": "Tutorías personalizadas bilingües y asesoría integral para la elaboración de trabajos de investigación, garantizando excelencia y honestidad en cada proyecto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

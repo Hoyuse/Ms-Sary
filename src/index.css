@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00236f;
+  --color-primary-light: #1e3a8a;
+  --color-secondary: #735c00;
+  --color-gold: #8c7000;
+  --color-gold-light: #fed65b;
+  --color-dark: #0d1c2f;
+  --color-text-gray: #444651;
+  --color-bg-light: #f8f9ff;
+  --color-bg-alt: #eff4ff;
+  --color-border-light: #dde9ff;
+  
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Custom CSS Helpers */
+.grid-notebook {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(200, 215, 245, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 215, 245, 0.35) 1px, transparent 1px);
+  background-color: #f8f9ff;
+}
+
+/* Scrollbar customizations */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f9ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccd7f0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b0c2e8;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-dark);
+    background-color: var(--color-bg-light);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}

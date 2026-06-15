@@ -1,0 +1,143 @@
+import { Phone, MapPin, Award, MessageSquare, Copy, Check, GraduationCap, BookOpen, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from 'motion/react';
+
+export default function Profile() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText('3014591627');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <section id="about" className="py-20 bg-[#eff4ff] border-b border-[#dde9ff]">
+      <div className="max-w-4xl mx-auto px-6">
+        
+        {/* Container with standard thin border and soft ambient shadow */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-xl border border-[#dde9ff] overflow-hidden shadow-lg grid md:grid-cols-12"
+        >
+          {/* Typographic Academic Crest / Monogram decoration block replacing the portrait image */}
+          <div className="md:col-span-5 relative h-80 md:h-auto min-h-[360px] bg-[#00236f] text-white flex flex-col justify-between p-8 overflow-hidden select-none">
+            {/* Elegant corner ribbons and background patterns */}
+            <div className="absolute inset-0 opacity-10 bg-grid-lines pointer-events-none grid-notebook" />
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full border border-white/10" />
+            <div className="absolute -bottom-10 -left-10 w-48 h-48 rounded-full bg-[#735c00]/10" />
+            
+            {/* Top row */}
+            <div className="relative z-10 flex items-center justify-between">
+              <span className="font-sans font-bold text-[9px] tracking-widest uppercase text-[#fed65b] border border-[#fed65b]/30 px-2 py-0.5 rounded">
+                Oficial Seal
+              </span>
+              <Sparkles size={14} className="text-[#fed65b]" />
+            </div>
+
+            {/* Middle row: Big beautiful stylized monogram */}
+            <div className="relative z-10 flex flex-col items-center justify-center my-auto py-6">
+              <div className="w-24 h-24 rounded-full border-2 border-[#fed65b] flex items-center justify-center bg-[#00174e] shadow-xl mb-4 relative">
+                <GraduationCap size={44} className="text-[#fed65b]" />
+                {/* Visual miniature sub-ring */}
+                <div className="absolute inset-1.5 rounded-full border border-[#fed65b]/20" />
+              </div>
+              <span className="font-serif italic text-3xl font-bold tracking-tight text-white block">
+                Ms. Sary
+              </span>
+              <span className="font-sans text-[10px] tracking-widest uppercase text-[#ccd7f0] font-semibold mt-1">
+                Asesorías Académicas
+              </span>
+            </div>
+
+            {/* Bottom credentials note */}
+            <div className="relative z-10 space-y-1">
+              <div className="flex items-center gap-2 text-xs text-[#ccd7f0]">
+                <BookOpen size={12} className="text-[#fed65b]" />
+                <span className="font-sans font-medium">Bilingual Excellence</span>
+              </div>
+              <p className="font-mono text-[9px] text-[#81a1e9]">
+                EST. COLOMBIA - GLOBAL ADVISING
+              </p>
+            </div>
+          </div>
+
+          {/* Credentials and Details Column */}
+          <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              {/* Overheading details */}
+              <div className="flex flex-col gap-1 mb-4">
+                <span className="font-sans font-bold text-xs tracking-wider uppercase text-[#735c00] flex items-center gap-1.5">
+                  <Award size={13} />
+                  Profesional en Lenguas Modernas y Cultura
+                </span>
+                <span className="font-sans font-medium text-xs text-[#444651] tracking-wide uppercase">
+                  4 Años de Experiencia Docente
+                </span>
+              </div>
+
+              {/* Teacher Name */}
+              <h3 className="font-serif font-bold text-2xl md:text-3xl text-[#00236f] mb-6">
+                Sarai Johana Viloria González
+              </h3>
+
+              {/* Academic Pull-quote Style testimonial */}
+              <div className="border-l-[3px] border-[#735c00] pl-5 py-1.5 mb-8 bg-[#f8f9ff]">
+                <p className="font-serif italic text-[#444651] text-[15px] md:text-[16px] leading-relaxed">
+                  "Mi compromiso es brindar las herramientas necesarias para que cada estudiante descubra su potencial y alcance la excelencia académica a través de la disciplina y el acompañamiento experto."
+                </p>
+              </div>
+            </div>
+
+            {/* Direct Contact triggers */}
+            <div className="space-y-4 pt-4 border-t border-[#dde9ff]">
+              
+              {/* Telephone with copy and direct call */}
+              <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-[#0d1c2f]">
+                <div className="flex items-center gap-3">
+                  <Phone size={16} className="text-[#00236f]" />
+                  <a href="tel:+573014591627" className="font-mono font-medium hover:text-[#00236f] hover:underline">
+                    3014591627
+                  </a>
+                </div>
+                
+                {/* Secondary instant contact buttons */}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handleCopyPhone}
+                    className="p-1 px-2.5 rounded bg-[#f8f9ff] hover:bg-[#eff4ff] text-xs font-sans font-medium text-[#444651] border border-[#dde9ff] flex items-center gap-1.5 transition-colors focus:outline-none"
+                    title="Copiar número"
+                  >
+                    {copied ? <Check size={12} className="text-green-600" /> : <Copy size={12} />}
+                    {copied ? 'Copiado' : 'Copiar'}
+                  </button>
+                  <a
+                    href="https://wa.me/573014591627?text=Hola%20Ms.%20Sary,%20quisiera%20asesoría%20académica."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-1 px-2.5 rounded bg-green-50 hover:bg-green-100 text-xs font-sans font-semibold text-green-700 border border-green-200 flex items-center gap-1.5 transition-all"
+                  >
+                    <MessageSquare size={12} />
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+
+              {/* Address / Location with trigger link */}
+              <div className="flex items-center gap-3 text-sm text-[#0d1c2f]">
+                <MapPin size={16} className="text-[#00236f] shrink-0" />
+                <span className="font-sans font-normal text-slate-700">
+                  Diagonal 22 #47-70
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
