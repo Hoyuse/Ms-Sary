@@ -57,12 +57,10 @@ export default function MissionAndVideo() {
   const [isMuted, setIsMuted] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<'es' | 'en'>('es');
   const [voiceEnabled, setVoiceEnabled] = useState(true);
-  const [qrUrl, setQrUrl] = useState('https://ms-sary.com');
+  const [qrUrl, setQrUrl] = useState('https://ms-sary.vercel.app');
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setQrUrl(window.location.href);
-    }
+    setQrUrl('https://ms-sary.vercel.app');
   }, []);
   
   const videoDuration = 38; // total mock duration in seconds
