@@ -1,5 +1,6 @@
 import { CalendarRange, Sparkles, BookOpen, Film } from 'lucide-react';
 import { motion } from 'motion/react';
+import portrait2 from '../assets/images/hero-photo-optimized.jpeg';
 
 interface HeroProps {
   onNavigate: (page: 'home' | 'mission-vision' | 'services' | 'about' | 'contact') => void;
@@ -93,6 +94,13 @@ export default function Hero({ onNavigate }: HeroProps) {
             Ver Misión, Visión & Video de Bienvenida con letras
           </button>
         </motion.div>
+
+        {/* Decorative portrait (creative placement) */}
+        <img
+          src={portrait2}
+          alt="Retrato decorativo Ms. Sary"
+          className="hidden md:block absolute right-6 top-6 w-36 h-36 rounded-xl shadow-lg object-cover ring-2 ring-white/60"
+        />
       </div>
     </header>
   );

@@ -1,4 +1,5 @@
 import { Phone, MapPin, Award, MessageSquare, Copy, Check, GraduationCap, BookOpen, Sparkles } from 'lucide-react';
+import portrait1 from '../assets/images/profile-photo-optimized.jpeg';
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
@@ -24,44 +25,30 @@ export default function Profile() {
           className="bg-white rounded-xl border border-[#dde9ff] overflow-hidden shadow-lg grid md:grid-cols-12"
         >
           {/* Typographic Academic Crest / Monogram decoration block replacing the portrait image */}
-          <div className="md:col-span-5 relative h-80 md:h-auto min-h-[360px] bg-[#00236f] text-white flex flex-col justify-between p-8 overflow-hidden select-none">
-            {/* Elegant corner ribbons and background patterns */}
+          <div className="md:col-span-5 relative h-80 md:h-auto min-h-[360px] bg-[#00236f] text-white flex flex-col justify-between p-0 overflow-hidden select-none">
+            {/* Portrait image for Sobre mí */}
             <div className="absolute inset-0 opacity-10 bg-grid-lines pointer-events-none grid-notebook" />
-            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full border border-white/10" />
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 rounded-full bg-[#735c00]/10" />
-            
-            {/* Top row */}
-            <div className="relative z-10 flex items-center justify-between">
-              <span className="font-sans font-bold text-[9px] tracking-widest uppercase text-[#fed65b] border border-[#fed65b]/30 px-2 py-0.5 rounded">
-                Oficial Seal
-              </span>
-              <Sparkles size={14} className="text-[#fed65b]" />
-            </div>
-
-            {/* Middle row: Big beautiful stylized monogram */}
-            <div className="relative z-10 flex flex-col items-center justify-center my-auto py-6">
-              <div className="w-24 h-24 rounded-full border-2 border-[#fed65b] flex items-center justify-center bg-[#00174e] shadow-xl mb-4 relative">
-                <GraduationCap size={44} className="text-[#fed65b]" />
-                {/* Visual miniature sub-ring */}
-                <div className="absolute inset-1.5 rounded-full border border-[#fed65b]/20" />
+            <img src={portrait1} alt="Retrato de Ms. Sary" className="w-full h-full object-cover block" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00174e]/80 pointer-events-none" />
+            <div className="relative z-10 p-6 flex flex-col justify-end h-full">
+              <div className="flex items-center justify-between">
+                <span className="font-sans font-bold text-[9px] tracking-widest uppercase text-[#fed65b] border border-[#fed65b]/30 px-2 py-0.5 rounded">
+                  Oficial Seal
+                </span>
+                <Sparkles size={14} className="text-[#fed65b]" />
               </div>
-              <span className="font-serif italic text-3xl font-bold tracking-tight text-white block">
-                Ms. Sary
-              </span>
-              <span className="font-sans text-[10px] tracking-widest uppercase text-[#ccd7f0] font-semibold mt-1">
-                Asesorías Académicas
-              </span>
-            </div>
 
-            {/* Bottom credentials note */}
-            <div className="relative z-10 space-y-1">
-              <div className="flex items-center gap-2 text-xs text-[#ccd7f0]">
-                <BookOpen size={12} className="text-[#fed65b]" />
-                <span className="font-sans font-medium">Bilingual Excellence</span>
+              <div className="mt-auto">
+                <div className="w-20 h-20 rounded-full border-2 border-[#fed65b] flex items-center justify-center bg-[#00174e] shadow-xl mb-3">
+                  <GraduationCap size={36} className="text-[#fed65b]" />
+                </div>
+                <span className="font-serif italic text-2xl font-bold tracking-tight text-white block">
+                  Ms. Sary
+                </span>
+                <span className="font-sans text-[10px] tracking-widest uppercase text-[#ccd7f0] font-semibold mt-1">
+                  Asesorías Académicas
+                </span>
               </div>
-              <p className="font-mono text-[9px] text-[#81a1e9]">
-                EST. COLOMBIA - GLOBAL ADVISING
-              </p>
             </div>
           </div>
 
